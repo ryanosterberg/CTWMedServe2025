@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Longest Last Name</title>
+        </head>
+
+        <div id = "result"></div>
+        <body>
+            <script>
+                let number;
+                do {
+                    number = parseInt(prompt("How many people do you know?"));
+                    if (isNaN(number)) {
+                        alert("Invalid answer");
+                    }
+                } while (isNaN(number))
+                
+                const names = [];
+                let shortNameNumber = 999;
+                let longNameNumber = 0;
+                let longName = "";
+                for (let count = 0; count < number; count++) {
+                    names.push(prompt("What is the person's full name in the format (First Middle Last)"));
+                    if (names[count].length < shortNameNumber) {
+                        shortNameNumber = names[count].length;
+                    }
+                    if (names[count].length > longNameNumber) {
+                        longNameNumber = names[count].length;
+                        longName = names[count].split(" ")[0];
+                    }
+                }
+                let string = "Full Name of the person with the longest last name: " + longName + "<br>Range: from " + shortNameNumber + " to " + longNameNumber + "<br>" + names;
+                document.getElementById("result").innerHTML = string;
+                /*
+                document.getElementById("result").textContent = "Full Name of the person with the longest last name " + longName;
+                document.getElementById("result").textContent = "Range: from " + shortNameNumber + " to " + longNameNumber;
+                document.getElementById("result").textContent = names;
+                */
+                
+            </script>
+
+
+
+        </body>
+
+
+    </html>
