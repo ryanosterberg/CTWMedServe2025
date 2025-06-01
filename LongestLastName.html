@@ -16,20 +16,44 @@
                 } while (isNaN(number))
                 
                 const names = [];
-                let shortNameNumber = 999;
-                let longNameNumber = 0;
-                let longName = "";
                 for (let count = 0; count < number; count++) {
                     names.push(prompt("What is the person's full name in the format (First Middle Last)"));
-                    if (names[count].length < shortNameNumber) {
-                        shortNameNumber = names[count].length;
-                    }
-                    if (names[count].length > longNameNumber) {
-                        longNameNumber = names[count].length;
-                        longName = names[count].split(" ")[0];
-                    }
                 }
-                let string = "Full Name of the person with the longest last name: " + longName + "<br>Range: from " + shortNameNumber + " to " + longNameNumber + "<br>" + names;
+
+                function shortestLengthName (names) {
+                    let shortNameNumber = 999;
+                    for (let count = 0; count < number; count++) {
+                        if (names[count].length < shortNameNumber) {
+                            shortNameNumber = names[count].length;
+                        }
+                    }
+                    return shortNameNumber;
+                }
+                function longestLengthName (names) {
+                    let longestLengthName = 0;
+                    for (let count = 0; count < number; count++) {
+                        if (names[count].length > longestLengthName) {
+                            longNameNumber = names[count].length;
+                        }
+                    }
+                    return longNameNumber;
+                }
+
+                function longestLastName (names) {
+                    let longestLastName = 0;
+                    let longName = "";
+                    for (let count = 0; count < number; count++) {
+                        if (names[count].length > longestLastName) {
+                            longNameNumber = names[count].length;
+                            longName = names[0];
+                        }
+                    }
+                    longName = longName.split(" ")[0]
+                    return longName;
+                }
+
+
+                let string = "Full Name of the person with the longest last name: " + longestLastName(names) + "<br>Names ranged from: " + shortestLengthName(names) + " to " + longestLengthName(names) + " in length<br>" + " The list of names are: " + names;
                 document.getElementById("result").innerHTML = string;
                 /*
                 document.getElementById("result").textContent = "Full Name of the person with the longest last name " + longName;
