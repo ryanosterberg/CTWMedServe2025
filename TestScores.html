@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Grade Calculator</title>
+    </head>
+
+    <body>
+        <div id = "result"></div>
+
+        <script>
+            let runUntilBreak = "0";
+            let test1 = "0";
+            let test2 = "0";
+            let test3 = "0";
+        while (runUntilBreak !== "no") {
+            test1 = parseFloat(prompt("What did you earn on your test?"));
+                if (isNaN(test1) === true || test1 > 100.0 || test1 < 0.0) {
+                    console.log("testcorrect");
+                    alert("Your grade is invalid");
+                } else {
+                    break;
+                }
+        }
+        
+        while (runUntilBreak !== "no") {
+            test2 = parseFloat(prompt("What did you earn on your test?"));
+                if (isNaN(test2) === true || test2 > 100.0 || test2 < 0.0) {
+                    alert("Your grade is invalid");
+                } else {
+                    break;
+                }
+        }
+            
+        while (runUntilBreak !== "no") {
+            test3 = parseFloat(prompt("What did you earn on your test?"));
+                if (isNaN(test3) === true || test3 > 100.0 || test3 < 0.0) {
+                    alert("Your grade is invalid");
+                } else {
+                    break;
+                }
+        }
+
+            let gradeAvg = ((test1 + test2 + test3) / 3.0);
+            if (gradeAvg >= 92.5) {
+                document.getElementById("result").textContent = "Grade: A";
+            } else if (gradeAvg >= 84.5) {
+                document.getElementById("result").textContent = "Grade: B";
+            } else if (gradeAvg >= 77.5) {
+                document.getElementById("result").textContent = "Grade: C";
+            } else if (gradeAvg >= 69.5) {
+                document.getElementById("result").textContent = "Grade: D";
+            } else {
+                document.getElementById("result").textContent = "Grade: F";
+            }
+
+            
+        </script>
+
+    </body>
+</html>

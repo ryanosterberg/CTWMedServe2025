@@ -1,0 +1,21 @@
+h3 {
+    color: rgb(13, 188, 188);
+}
+
+#logo {
+    width: 8%;
+    border-radius: 50%;
+}
+
+p {
+    font-family:'Courier New', Courier, monospace;
+}
+
+button {
+    background-color: rgb(13, 188, 188);
+    padding: 15px 32px;
+    width: 250px;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+}
