@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Longest Last Name</title>
+        </head>
+
+        <div id = "result"></div>
+        <body>
+            <script>
+                let number;
+                do {
+                    number = parseInt(prompt("How many people do you know?"));
+                    if (isNaN(number)) {
+                        alert("Invalid answer");
+                    }
+                } while (isNaN(number))
+                
+                const names = [];
+                for (let count = 0; count < number; count++) {
+                    names.push(prompt("What is the person's full name in the format (First Middle Last)"));
+                }
+
+                function shortestLengthName (names) {
+                    let shortNameNumber = 999;
+                    for (let count = 0; count < number; count++) {
+                        if (names[count].length < shortNameNumber) {
+                            shortNameNumber = names[count].length;
+                        }
+                    }
+                    return shortNameNumber;
+                }
+                function longestLengthName (names) {
+                    let longestLengthName = 0;
+                    for (let count = 0; count < number; count++) {
+                        if (names[count].length > longestLengthName) {
+                            longNameNumber = names[count].length;
+                        }
+                    }
+                    return longNameNumber;
+                }
+
+                function longestLastName (names) {
+                    let longestLastName = 0;
+                    let longName = "";
+                    for (let count = 0; count < number; count++) {
+                        if (names[count].length > longestLastName) {
+                            longNameNumber = names[count].length;
+                            longName = names[0];
+                        }
+                    }
+                    longName = longName.split(" ")[0]
+                    return longName;
+                }
+
+
+                let string = "Full Name of the person with the longest last name: " + longestLastName(names) + "<br>Names ranged from: " + shortestLengthName(names) + " to " + longestLengthName(names) + " in length<br>" + " The list of names are: " + names;
+                document.getElementById("result").innerHTML = string;
+                /*
+                document.getElementById("result").textContent = "Full Name of the person with the longest last name " + longName;
+                document.getElementById("result").textContent = "Range: from " + shortNameNumber + " to " + longNameNumber;
+                document.getElementById("result").textContent = names;
+                */
+                
+            </script>
+
+
+
+        </body>
+
+
+    </html>

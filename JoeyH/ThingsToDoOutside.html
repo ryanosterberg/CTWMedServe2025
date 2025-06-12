@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <body>
+    <div id = "result"></div>
+    
+<script>
+    let runUntilBreak = "0";
+    while (runUntilBreak !== "no") {
+        let weather = prompt("Is it raining outside?");
+        let raining = weather.toLowerCase() === "yes";
+        if (raining) {
+            document.getElementById("result").textContent = "Play video games";
+            break;
+        } else if (weather.toLowerCase() === "no") {
+            document.getElementById("result").textContent = "Play outside";
+            break;
+        } else {
+            document.getElementById("result").textContent = "Invalid text";
+        }
+    }
+    </script>
+
+
+
+</body>
+    
+</html>
