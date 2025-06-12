@@ -15,4 +15,4 @@ function ExpenseDate(props) {
     );
 }
 
-export default Date;
+export default ExpenseDate;
