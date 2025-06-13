@@ -30,7 +30,7 @@ function ExpenseForm(props) {
         setEnteredAmount("");
         setEnteredDate("");
         setEnteredTitle("");
-    };
+    }
 
 
     return (
