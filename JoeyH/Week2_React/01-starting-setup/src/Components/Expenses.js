@@ -19,14 +19,16 @@ function Expenses(props) {
     return (
         <Card className="expenses">
           <ExpensesFilter selected = {filteredYear} onFilterChange = {filterChangeHandler}></ExpensesFilter>
-          {filterExpenses.map((expensesElement) => (
-            <ExpenseItem
-            key = {expensesElement.id}
-            title = {expensesElement.title}
-            amount = {expensesElement.amount}
-            date = {expensesElement.date}
-            ></ExpenseItem>
-          ))}
+          {filterExpenses.length === 0 ? (<p className="class-white">No expenses found</p>) : (
+            filterExpenses.map((expensesElement) => (
+              <ExpenseItem
+              key = {expensesElement.id}
+              title = {expensesElement.title}
+              amount = {expensesElement.amount}
+              date = {expensesElement.date}
+              ></ExpenseItem>
+            ))
+          )}
         </Card>
     );
 }
