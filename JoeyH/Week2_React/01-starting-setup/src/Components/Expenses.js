@@ -3,6 +3,7 @@ import ExpenseItem from "./ExpenseItem";
 import "./ExpenseDate.css";
 import Card from "./Card";
 import ExpensesFilter from "./NewExpense/ExpensesFilter";
+import ExpensesChart from "./NewExpense/ExpensesChart";
 
 
 function Expenses(props) {
@@ -18,6 +19,7 @@ function Expenses(props) {
 
     return (
         <Card className="expenses">
+          <ExpensesChart expenses={props.items}></ExpensesChart>
           <ExpensesFilter selected = {filteredYear} onFilterChange = {filterChangeHandler}></ExpensesFilter>
           {filterExpenses.length === 0 ? (<p className="class-white">No expenses found</p>) : (
             filterExpenses.map((expensesElement) => (
